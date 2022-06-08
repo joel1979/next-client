@@ -1,0 +1,1055 @@
+{
+  "templateId" : "Remiss",
+  "semVer" : "9.0.0",
+  "version" : "2.3",
+  "defaultLanguage" : "sv",
+  "languages" : [ "sv" ],
+  "tree" : {
+    "id" : "remiss",
+    "name" : "Remiss",
+    "localizedName" : "Remiss",
+    "rmType" : "COMPOSITION",
+    "nodeId" : "openEHR-EHR-COMPOSITION.request.v1",
+    "min" : 1,
+    "max" : 1,
+    "localizedNames" : {
+      "sv" : "Remiss"
+    },
+    "localizedDescriptions" : {
+      "sv" : "Dokument som skickas från en vårdgivare eller organisation till en annan, i syfte att be om råd, begära en tjänst eller att begära vårdöverföring."
+    },
+    "aqlPath" : "",
+    "children" : [ {
+      "id" : "context",
+      "rmType" : "EVENT_CONTEXT",
+      "nodeId" : "",
+      "min" : 1,
+      "max" : 1,
+      "aqlPath" : "/context",
+      "children" : [ {
+        "id" : "personuppgifter",
+        "name" : "Personuppgifter",
+        "localizedName" : "Personuppgifter",
+        "rmType" : "CLUSTER",
+        "nodeId" : "openEHR-EHR-CLUSTER.person.v0",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "sv" : "Personuppgifter"
+        },
+        "localizedDescriptions" : {
+          "sv" : "*An individual human being. (en)"
+        },
+        "aqlPath" : "/context/other_context[at0001]/items[openEHR-EHR-CLUSTER.person.v0,'Personuppgifter']",
+        "children" : [ {
+          "id" : "patientens_namn",
+          "name" : "Patientens namn",
+          "localizedName" : "Patientens namn",
+          "rmType" : "CLUSTER",
+          "nodeId" : "openEHR-EHR-CLUSTER.structured_name.v0",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Patientens namn"
+          },
+          "localizedDescriptions" : {
+            "sv" : "*Discrete components of an individual's name. (en)"
+          },
+          "aqlPath" : "/context/other_context[at0001]/items[openEHR-EHR-CLUSTER.person.v0,'Personuppgifter']/items[openEHR-EHR-CLUSTER.structured_name.v0,'Patientens namn']",
+          "children" : [ {
+            "id" : "förnamn",
+            "name" : "Förnamn",
+            "localizedName" : "Förnamn",
+            "rmType" : "DV_TEXT",
+            "nodeId" : "at0002",
+            "min" : 0,
+            "max" : -1,
+            "localizedNames" : {
+              "sv" : "Förnamn"
+            },
+            "localizedDescriptions" : {
+              "sv" : "*The person's identifying first name(s) within the family group or by which they are uniquely socially identified. (en)"
+            },
+            "annotations" : {
+              "comment" : "*Occurrences for this data element are set to 0..* to allow for more than one Given name to be recorded. In addition, this data element may be cloned and renamed within a template to allow discrete recording of 'First name', 'Middle name' and 'Nickname' or similar types of given names, as required for a specific use case. (en)"
+            },
+            "aqlPath" : "/context/other_context[at0001]/items[openEHR-EHR-CLUSTER.person.v0,'Personuppgifter']/items[openEHR-EHR-CLUSTER.structured_name.v0,'Patientens namn']/items[at0002,'Förnamn']/value",
+            "inputs" : [ {
+              "type" : "TEXT"
+            } ]
+          }, {
+            "id" : "efternamn",
+            "name" : "Efternamn",
+            "localizedName" : "Efternamn",
+            "rmType" : "DV_TEXT",
+            "nodeId" : "at0005",
+            "min" : 0,
+            "max" : -1,
+            "localizedNames" : {
+              "sv" : "Efternamn"
+            },
+            "localizedDescriptions" : {
+              "sv" : "*The part of a name a person usually has in common with some other members of their family, as distinguished from their own given names. (en)"
+            },
+            "annotations" : {
+              "comment" : "*Also known as 'Last name' or 'Surname'. Occurrences for this data element are set to 0..* to allow for more than one Family name to be recorded.  (en)"
+            },
+            "aqlPath" : "/context/other_context[at0001]/items[openEHR-EHR-CLUSTER.person.v0,'Personuppgifter']/items[openEHR-EHR-CLUSTER.structured_name.v0,'Patientens namn']/items[at0005,'Efternamn']/value",
+            "inputs" : [ {
+              "type" : "TEXT"
+            } ]
+          } ]
+        }, {
+          "id" : "patient_id",
+          "name" : "Patient id",
+          "localizedName" : "Patient id",
+          "rmType" : "ELEMENT",
+          "nodeId" : "at0003",
+          "min" : 0,
+          "max" : -1,
+          "localizedNames" : {
+            "sv" : "Patient id"
+          },
+          "localizedDescriptions" : {
+            "sv" : "*Identifier associated with the individual. (en)"
+          },
+          "annotations" : {
+            "comment" : "*Occurrences for this data element is set to 0..* to allow for more than one Identifier to be recorded. Note that the ID data type contains multiple subcomponents for recording the ID value, type, issuer and assigned. For example - social security number; driver's license; or passport number. (en)"
+          },
+          "aqlPath" : "/context/other_context[at0001]/items[openEHR-EHR-CLUSTER.person.v0,'Personuppgifter']/items[at0003,'Patient id']",
+          "children" : [ {
+            "id" : "identifier_value",
+            "localizedName" : "Patient id",
+            "rmType" : "DV_IDENTIFIER",
+            "nodeId" : "",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "sv" : "Patient id"
+            },
+            "localizedDescriptions" : {
+              "sv" : "*Identifier associated with the individual. (en)"
+            },
+            "aqlPath" : "/context/other_context[at0001]/items[openEHR-EHR-CLUSTER.person.v0,'Personuppgifter']/items[at0003,'Patient id']/value",
+            "inputs" : [ {
+              "suffix" : "id",
+              "type" : "TEXT"
+            }, {
+              "suffix" : "type",
+              "type" : "TEXT"
+            }, {
+              "suffix" : "issuer",
+              "type" : "TEXT"
+            }, {
+              "suffix" : "assigner",
+              "type" : "TEXT"
+            } ]
+          }, {
+            "id" : "text_value",
+            "localizedName" : "Patient id",
+            "rmType" : "DV_TEXT",
+            "nodeId" : "",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "sv" : "Patient id"
+            },
+            "localizedDescriptions" : {
+              "sv" : "*Identifier associated with the individual. (en)"
+            },
+            "aqlPath" : "/context/other_context[at0001]/items[openEHR-EHR-CLUSTER.person.v0,'Personuppgifter']/items[at0003,'Patient id']/value",
+            "inputs" : [ {
+              "type" : "TEXT"
+            } ]
+          } ]
+        }, {
+          "id" : "patientens_adress",
+          "name" : "Patientens adress",
+          "localizedName" : "Patientens adress",
+          "rmType" : "CLUSTER",
+          "nodeId" : "openEHR-EHR-CLUSTER.address.v0",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Patientens adress"
+          },
+          "localizedDescriptions" : {
+            "sv" : "*Information about the location of a physical building or landmark. (en)"
+          },
+          "aqlPath" : "/context/other_context[at0001]/items[openEHR-EHR-CLUSTER.person.v0,'Personuppgifter']/items[openEHR-EHR-CLUSTER.address.v0,'Patientens adress']",
+          "children" : [ {
+            "id" : "stad",
+            "name" : "Stad",
+            "localizedName" : "Stad",
+            "rmType" : "DV_TEXT",
+            "nodeId" : "at0002",
+            "min" : 0,
+            "max" : -1,
+            "localizedNames" : {
+              "sv" : "Stad"
+            },
+            "localizedDescriptions" : {
+              "sv" : "*The name of the suburb, town, city, village, community or lowest level locality that contains the address. (en)"
+            },
+            "annotations" : {
+              "comment" : "*Coding with an external terminology is preferred, where possible. For example: 'Fitzroy'; 'Manchester'; 'Kingston' or 'Bergen'. (en)"
+            },
+            "aqlPath" : "/context/other_context[at0001]/items[openEHR-EHR-CLUSTER.person.v0,'Personuppgifter']/items[openEHR-EHR-CLUSTER.address.v0,'Patientens adress']/items[at0002,'Stad']/value",
+            "inputs" : [ {
+              "type" : "TEXT"
+            } ]
+          }, {
+            "id" : "ort",
+            "name" : "Ort",
+            "localizedName" : "Ort",
+            "rmType" : "DV_TEXT",
+            "nodeId" : "at0003",
+            "min" : 0,
+            "max" : -1,
+            "localizedNames" : {
+              "sv" : "Ort"
+            },
+            "localizedDescriptions" : {
+              "sv" : "*The name of a local government district or geographical area that contains the address. (en)"
+            },
+            "annotations" : {
+              "comment" : "*Coding with an external terminology is preferred, where possible. For example: 'Surf Coast' and 'Yarra' local government councils in Victoria, Australia; and the Parishes of 'St. Andrew' and 'Kingston' in Jamaica. (en)"
+            },
+            "aqlPath" : "/context/other_context[at0001]/items[openEHR-EHR-CLUSTER.person.v0,'Personuppgifter']/items[openEHR-EHR-CLUSTER.address.v0,'Patientens adress']/items[at0003,'Ort']/value",
+            "inputs" : [ {
+              "type" : "TEXT"
+            } ]
+          }, {
+            "id" : "postnummer",
+            "name" : "Postnummer",
+            "localizedName" : "Postnummer",
+            "rmType" : "DV_TEXT",
+            "nodeId" : "at0005",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "sv" : "Postnummer"
+            },
+            "localizedDescriptions" : {
+              "sv" : "*The code for a postal delivery area containing the address, as defined by the relevant postal delivery service. (en)"
+            },
+            "annotations" : {
+              "comment" : "*Also known as a postcode or ZIP code.\r\n (en)"
+            },
+            "aqlPath" : "/context/other_context[at0001]/items[openEHR-EHR-CLUSTER.person.v0,'Personuppgifter']/items[openEHR-EHR-CLUSTER.address.v0,'Patientens adress']/items[at0005,'Postnummer']/value",
+            "inputs" : [ {
+              "type" : "TEXT"
+            } ]
+          }, {
+            "id" : "land",
+            "name" : "Land",
+            "localizedName" : "Land",
+            "rmType" : "DV_TEXT",
+            "nodeId" : "at0006",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "sv" : "Land"
+            },
+            "localizedDescriptions" : {
+              "sv" : "*The name of the country containing the address. (en)"
+            },
+            "annotations" : {
+              "comment" : "*For example: Australia; Canada; Jamaica; or Norway. Coding with an external terminology, such as EN ISO 3166–1 Alpha 2 country code, is recommended.  (en)"
+            },
+            "aqlPath" : "/context/other_context[at0001]/items[openEHR-EHR-CLUSTER.person.v0,'Personuppgifter']/items[openEHR-EHR-CLUSTER.address.v0,'Patientens adress']/items[at0006,'Land']/value",
+            "inputs" : [ {
+              "type" : "TEXT"
+            } ]
+          } ]
+        }, {
+          "id" : "comment_en",
+          "name" : "*Comment (en)",
+          "localizedName" : "*Comment (en)",
+          "rmType" : "DV_TEXT",
+          "nodeId" : "at0010",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "*Comment (en)"
+          },
+          "localizedDescriptions" : {
+            "sv" : "*Additional narrative about the person not captured in other fields. (en)"
+          },
+          "aqlPath" : "/context/other_context[at0001]/items[openEHR-EHR-CLUSTER.person.v0,'Personuppgifter']/items[at0010]/value",
+          "inputs" : [ {
+            "type" : "TEXT"
+          } ]
+        } ]
+      }, {
+        "id" : "start_time",
+        "name" : "Start_time",
+        "rmType" : "DV_DATE_TIME",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/context/start_time",
+        "inputs" : [ {
+          "type" : "DATETIME"
+        } ],
+        "inContext" : true
+      }, {
+        "id" : "setting",
+        "name" : "Setting",
+        "rmType" : "DV_CODED_TEXT",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/context/setting",
+        "inputs" : [ {
+          "suffix" : "code",
+          "type" : "TEXT"
+        }, {
+          "suffix" : "value",
+          "type" : "TEXT"
+        } ],
+        "inContext" : true
+      } ]
+    }, {
+      "id" : "remiss_information",
+      "name" : "Remiss information",
+      "localizedName" : "Remiss information",
+      "rmType" : "INSTRUCTION",
+      "nodeId" : "openEHR-EHR-INSTRUCTION.service_request.v1",
+      "min" : 0,
+      "max" : 1,
+      "localizedNames" : {
+        "sv" : "Remiss information"
+      },
+      "localizedDescriptions" : {
+        "sv" : "Förfrågan om en hälso- och sjukvårdsrelaterad tjänst eller aktivitet som behöver genomföras av en kliniker, organisation eller myndighet. \r\n"
+      },
+      "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']",
+      "children" : [ {
+        "id" : "nuvarande_aktivitet",
+        "name" : "Nuvarande aktivitet",
+        "localizedName" : "Nuvarande aktivitet",
+        "rmType" : "ACTIVITY",
+        "nodeId" : "at0001",
+        "min" : 1,
+        "max" : -1,
+        "localizedNames" : {
+          "sv" : "Nuvarande aktivitet"
+        },
+        "localizedDescriptions" : {
+          "sv" : "Nuvarande aktivitet"
+        },
+        "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/activities[at0001]",
+        "children" : [ {
+          "id" : "frågeställning",
+          "name" : "Frågeställning",
+          "localizedName" : "Frågeställning",
+          "rmType" : "DV_TEXT",
+          "nodeId" : "at0121",
+          "min" : 1,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Frågeställning"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Namnet på den enskilda tjänsten eller aktiviteten som efterfrågas.\r\n"
+          },
+          "annotations" : {
+            "comment" : "Kodning av \"Namn på tjänst\" med ett kodsystem är att föredra, om möjligt. Till exempel 'remiss' till en endokrinolog för behandling av diabetes."
+          },
+          "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/activities[at0001]/description[at0009]/items[at0121,'Frågeställning']/value",
+          "inputs" : [ {
+            "type" : "TEXT"
+          } ]
+        }, {
+          "id" : "typ_av_tjänst",
+          "name" : "Typ av tjänst",
+          "localizedName" : "Typ av tjänst",
+          "rmType" : "DV_TEXT",
+          "nodeId" : "at0148",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Typ av tjänst"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Kategori på typ av efterfrågad tjänst"
+          },
+          "annotations" : {
+            "comment" : "Kodning av \"Typ av tjänst\" är att föredra, om möjligt. Om 'Namn på tjänst' är kodat är det möjligt för detta dataelement att härledas från koden. Exempelvis: biokemi eller mikrobiologi laboratorium, ultraljud eller datatomografi."
+          },
+          "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/activities[at0001]/description[at0009]/items[at0148]/value",
+          "inputs" : [ {
+            "type" : "TEXT",
+            "list" : [ {
+              "value" : "biopsianalys",
+              "label" : "biopsianalys"
+            }, {
+              "value" : "Resektat",
+              "label" : "Resektat"
+            }, {
+              "value" : "Hela organ",
+              "label" : "Hela organ"
+            } ],
+            "listOpen" : false
+          } ]
+        }, {
+          "id" : "anledning_till_analys",
+          "name" : "Anledning till analys",
+          "localizedName" : "Anledning till analys",
+          "rmType" : "DV_TEXT",
+          "nodeId" : "at0062",
+          "min" : 0,
+          "max" : -1,
+          "localizedNames" : {
+            "sv" : "Anledning till analys"
+          },
+          "localizedDescriptions" : {
+            "sv" : "En kort mening om varför tjänsten efterfrågas."
+          },
+          "annotations" : {
+            "comment" : "Kodning av detta dataelement är önskvärt, om möjligt. \r\nDetta dataelement tillåter flera värden om så behövs och gör det möjligt för användaren att ge flera svar. Till exempel: \"hantera diabeteskomplikationer\"."
+          },
+          "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/activities[at0001]/description[at0009]/items[at0062,'Anledning till analys']/value",
+          "inputs" : [ {
+            "type" : "TEXT"
+          } ]
+        }, {
+          "id" : "klinisk_indikation",
+          "name" : "Klinisk indikation",
+          "localizedName" : "Klinisk indikation",
+          "rmType" : "DV_TEXT",
+          "nodeId" : "at0152",
+          "min" : 0,
+          "max" : -1,
+          "localizedNames" : {
+            "sv" : "Klinisk indikation"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Den kliniska anledningen till den efterfrågade tjänsten."
+          },
+          "annotations" : {
+            "comment" : "Kodning av den kliniska indikationen med en terminologi är att föredra, där det är möjligt. Detta dataelement tillåter flera förekomster. Till exempel: 'Angina' eller 'Type 1 Diabetes mellitus'."
+          },
+          "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/activities[at0001]/description[at0009]/items[at0152]/value",
+          "inputs" : [ {
+            "type" : "TEXT"
+          } ]
+        }, {
+          "id" : "avsikt",
+          "name" : "Avsikt",
+          "localizedName" : "Avsikt",
+          "rmType" : "DV_TEXT",
+          "nodeId" : "at0065",
+          "min" : 0,
+          "max" : -1,
+          "localizedNames" : {
+            "sv" : "Avsikt"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Beskrivning av avsikten med förfrågan"
+          },
+          "annotations" : {
+            "comment" : "Till exempel en remiss till en specialist kan ha avsikten att specialisten tar över ansvaret för vården av patienten, eller att komma med en second opinion på behandlingsförslag. Kodning av avsikten är att föredra. Denna datapunkt tillåter flera möjliga värden, för att möjliggöra att användaren kan registrera flera svar om så behövs."
+          },
+          "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/activities[at0001]/description[at0009]/items[at0065]/value",
+          "inputs" : [ {
+            "type" : "TEXT",
+            "list" : [ {
+              "value" : "inför diagnos",
+              "label" : "inför diagnos"
+            }, {
+              "value" : "inför operation",
+              "label" : "inför operation"
+            }, {
+              "value" : "inför behandling",
+              "label" : "inför behandling"
+            } ],
+            "listOpen" : false
+          } ]
+        }, {
+          "id" : "brådskandegrad",
+          "name" : "Brådskandegrad",
+          "localizedName" : "Brådskandegrad",
+          "rmType" : "DV_CODED_TEXT",
+          "nodeId" : "at0068",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Brådskandegrad"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Brådskandegrad för tjänsten."
+          },
+          "annotations" : {
+            "comment" : "Specifika definitioner av akut och brådskande varierar mellan olika kliniska sammanhang, kliniska system och av tjänsten som efterfrågas, detta gör att den inte är definierad i arketypen. Om explicit tidpunkt är nödvändig ska tjänsteperioden tydligt anges."
+          },
+          "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/activities[at0001]/description[at0009]/items[at0068]/value",
+          "inputs" : [ {
+            "suffix" : "code",
+            "type" : "CODED_TEXT",
+            "list" : [ {
+              "value" : "at0136",
+              "label" : "Akut",
+              "localizedLabels" : {
+                "sv" : "Akut"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Denna förfrågan kräver omedelbar uppmärksamhet."
+              }
+            }, {
+              "value" : "at0137",
+              "label" : "Brådskande",
+              "localizedLabels" : {
+                "sv" : "Brådskande"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Denna förfrågan kräver prioriterad uppmärksamhet."
+              }
+            }, {
+              "value" : "at0138",
+              "label" : "Rutin",
+              "localizedLabels" : {
+                "sv" : "Rutin"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Denna förfrågan kräver inte prioriterad schemaläggning."
+              }
+            } ],
+            "listOpen" : true
+          }, {
+            "suffix" : "other",
+            "type" : "TEXT"
+          } ]
+        }, {
+          "id" : "kompletterande_infromation",
+          "name" : "Kompletterande infromation",
+          "localizedName" : "Kompletterande infromation",
+          "rmType" : "DV_BOOLEAN",
+          "nodeId" : "at0076",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Kompletterande infromation"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Kompletterande information kommer efter begäran."
+          },
+          "annotations" : {
+            "comment" : "Ange som SANT om ytterligare information har identifierats och kommer att vidarebefordras när den är tillgänglig. Till exempel: väntande testresultat."
+          },
+          "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/activities[at0001]/description[at0009]/items[at0076]/value",
+          "inputs" : [ {
+            "type" : "BOOLEAN",
+            "list" : [ {
+              "value" : "true",
+              "label" : "true"
+            } ]
+          } ]
+        }, {
+          "id" : "timing",
+          "name" : "Timing",
+          "rmType" : "DV_PARSABLE",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/activities[at0001]/timing",
+          "inputs" : [ {
+            "suffix" : "value",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "formalism",
+            "type" : "TEXT"
+          } ],
+          "inContext" : true
+        }, {
+          "id" : "action_archetype_id",
+          "name" : "Action_archetype_id",
+          "rmType" : "STRING",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/activities[at0001]/action_archetype_id",
+          "inputs" : [ {
+            "type" : "TEXT"
+          } ],
+          "inContext" : true
+        } ]
+      }, {
+        "id" : "beställar_id",
+        "name" : "Beställar ID",
+        "localizedName" : "Beställar ID",
+        "rmType" : "ELEMENT",
+        "nodeId" : "at0010",
+        "min" : 0,
+        "max" : 1,
+        "dependsOn" : [ "nuvarande_aktivitet" ],
+        "localizedNames" : {
+          "sv" : "Beställar ID"
+        },
+        "localizedDescriptions" : {
+          "sv" : "Den lokala identifieraren som tilldelats av det begärande kliniska systemet."
+        },
+        "annotations" : {
+          "comment" : "Vanligtvis motsvarande HL7 Placer Order Identifier."
+        },
+        "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/protocol[at0008]/items[at0010]",
+        "children" : [ {
+          "id" : "text_value",
+          "localizedName" : "Beställar ID",
+          "rmType" : "DV_TEXT",
+          "nodeId" : "",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Beställar ID"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Den lokala identifieraren som tilldelats av det begärande kliniska systemet."
+          },
+          "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/protocol[at0008]/items[at0010]/value",
+          "inputs" : [ {
+            "type" : "TEXT"
+          } ]
+        }, {
+          "id" : "identifier_value",
+          "localizedName" : "Beställar ID",
+          "rmType" : "DV_IDENTIFIER",
+          "nodeId" : "",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Beställar ID"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Den lokala identifieraren som tilldelats av det begärande kliniska systemet."
+          },
+          "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/protocol[at0008]/items[at0010]/value",
+          "inputs" : [ {
+            "suffix" : "id",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "type",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "issuer",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "assigner",
+            "type" : "TEXT"
+          } ]
+        } ]
+      }, {
+        "id" : "remittents_adress",
+        "name" : "Remittents Adress",
+        "localizedName" : "Remittents Adress",
+        "rmType" : "CLUSTER",
+        "nodeId" : "openEHR-EHR-CLUSTER.address.v0",
+        "min" : 0,
+        "max" : 1,
+        "dependsOn" : [ "nuvarande_aktivitet" ],
+        "localizedNames" : {
+          "sv" : "Remittents Adress"
+        },
+        "localizedDescriptions" : {
+          "sv" : "*Information about the location of a physical building or landmark. (en)"
+        },
+        "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/protocol[at0008]/items[openEHR-EHR-CLUSTER.address.v0,'Remittents Adress']",
+        "children" : [ {
+          "id" : "stad",
+          "name" : "Stad",
+          "localizedName" : "Stad",
+          "rmType" : "DV_TEXT",
+          "nodeId" : "at0002",
+          "min" : 0,
+          "max" : -1,
+          "localizedNames" : {
+            "sv" : "Stad"
+          },
+          "localizedDescriptions" : {
+            "sv" : "*The name of the suburb, town, city, village, community or lowest level locality that contains the address. (en)"
+          },
+          "annotations" : {
+            "comment" : "*Coding with an external terminology is preferred, where possible. For example: 'Fitzroy'; 'Manchester'; 'Kingston' or 'Bergen'. (en)"
+          },
+          "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/protocol[at0008]/items[openEHR-EHR-CLUSTER.address.v0,'Remittents Adress']/items[at0002,'Stad']/value",
+          "inputs" : [ {
+            "type" : "TEXT"
+          } ]
+        }, {
+          "id" : "ort",
+          "name" : "Ort",
+          "localizedName" : "Ort",
+          "rmType" : "DV_TEXT",
+          "nodeId" : "at0003",
+          "min" : 0,
+          "max" : -1,
+          "localizedNames" : {
+            "sv" : "Ort"
+          },
+          "localizedDescriptions" : {
+            "sv" : "*The name of a local government district or geographical area that contains the address. (en)"
+          },
+          "annotations" : {
+            "comment" : "*Coding with an external terminology is preferred, where possible. For example: 'Surf Coast' and 'Yarra' local government councils in Victoria, Australia; and the Parishes of 'St. Andrew' and 'Kingston' in Jamaica. (en)"
+          },
+          "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/protocol[at0008]/items[openEHR-EHR-CLUSTER.address.v0,'Remittents Adress']/items[at0003,'Ort']/value",
+          "inputs" : [ {
+            "type" : "TEXT"
+          } ]
+        }, {
+          "id" : "postnummer",
+          "name" : "Postnummer",
+          "localizedName" : "Postnummer",
+          "rmType" : "DV_TEXT",
+          "nodeId" : "at0005",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Postnummer"
+          },
+          "localizedDescriptions" : {
+            "sv" : "*The code for a postal delivery area containing the address, as defined by the relevant postal delivery service. (en)"
+          },
+          "annotations" : {
+            "comment" : "*Also known as a postcode or ZIP code.\r\n (en)"
+          },
+          "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/protocol[at0008]/items[openEHR-EHR-CLUSTER.address.v0,'Remittents Adress']/items[at0005,'Postnummer']/value",
+          "inputs" : [ {
+            "type" : "TEXT"
+          } ]
+        }, {
+          "id" : "land",
+          "name" : "Land",
+          "localizedName" : "Land",
+          "rmType" : "DV_TEXT",
+          "nodeId" : "at0006",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Land"
+          },
+          "localizedDescriptions" : {
+            "sv" : "*The name of the country containing the address. (en)"
+          },
+          "annotations" : {
+            "comment" : "*For example: Australia; Canada; Jamaica; or Norway. Coding with an external terminology, such as EN ISO 3166–1 Alpha 2 country code, is recommended.  (en)"
+          },
+          "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/protocol[at0008]/items[openEHR-EHR-CLUSTER.address.v0,'Remittents Adress']/items[at0006,'Land']/value",
+          "inputs" : [ {
+            "type" : "TEXT"
+          } ]
+        } ]
+      }, {
+        "id" : "mottagar_id",
+        "name" : "Mottagar ID",
+        "localizedName" : "Mottagar ID",
+        "rmType" : "ELEMENT",
+        "nodeId" : "at0011",
+        "min" : 0,
+        "max" : 1,
+        "dependsOn" : [ "nuvarande_aktivitet" ],
+        "localizedNames" : {
+          "sv" : "Mottagar ID"
+        },
+        "localizedDescriptions" : {
+          "sv" : "Den lokala identifieraren (ID) som tilldelats begäran, av läkaren eller organisationen som tar emot begäran om service."
+        },
+        "annotations" : {
+          "comment" : "Vanligen motsvarande HL7 Filler Order Identifier"
+        },
+        "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/protocol[at0008]/items[at0011]",
+        "children" : [ {
+          "id" : "text_value",
+          "localizedName" : "Mottagar ID",
+          "rmType" : "DV_TEXT",
+          "nodeId" : "",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Mottagar ID"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Den lokala identifieraren (ID) som tilldelats begäran, av läkaren eller organisationen som tar emot begäran om service."
+          },
+          "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/protocol[at0008]/items[at0011]/value",
+          "inputs" : [ {
+            "type" : "TEXT"
+          } ]
+        }, {
+          "id" : "identifier_value",
+          "localizedName" : "Mottagar ID",
+          "rmType" : "DV_IDENTIFIER",
+          "nodeId" : "",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Mottagar ID"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Den lokala identifieraren (ID) som tilldelats begäran, av läkaren eller organisationen som tar emot begäran om service."
+          },
+          "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/protocol[at0008]/items[at0011]/value",
+          "inputs" : [ {
+            "suffix" : "id",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "type",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "issuer",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "assigner",
+            "type" : "TEXT"
+          } ]
+        } ]
+      }, {
+        "id" : "mottagares_adress",
+        "name" : "Mottagares adress",
+        "localizedName" : "Mottagares adress",
+        "rmType" : "CLUSTER",
+        "nodeId" : "openEHR-EHR-CLUSTER.address.v0",
+        "min" : 0,
+        "max" : 1,
+        "dependsOn" : [ "nuvarande_aktivitet" ],
+        "localizedNames" : {
+          "sv" : "Mottagares adress"
+        },
+        "localizedDescriptions" : {
+          "sv" : "*Information about the location of a physical building or landmark. (en)"
+        },
+        "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/protocol[at0008]/items[openEHR-EHR-CLUSTER.address.v0,'Mottagares adress']",
+        "children" : [ {
+          "id" : "stad",
+          "name" : "Stad",
+          "localizedName" : "Stad",
+          "rmType" : "DV_TEXT",
+          "nodeId" : "at0002",
+          "min" : 0,
+          "max" : -1,
+          "localizedNames" : {
+            "sv" : "Stad"
+          },
+          "localizedDescriptions" : {
+            "sv" : "*The name of the suburb, town, city, village, community or lowest level locality that contains the address. (en)"
+          },
+          "annotations" : {
+            "comment" : "*Coding with an external terminology is preferred, where possible. For example: 'Fitzroy'; 'Manchester'; 'Kingston' or 'Bergen'. (en)"
+          },
+          "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/protocol[at0008]/items[openEHR-EHR-CLUSTER.address.v0,'Mottagares adress']/items[at0002,'Stad']/value",
+          "inputs" : [ {
+            "type" : "TEXT"
+          } ]
+        }, {
+          "id" : "ort",
+          "name" : "Ort",
+          "localizedName" : "Ort",
+          "rmType" : "DV_TEXT",
+          "nodeId" : "at0003",
+          "min" : 0,
+          "max" : -1,
+          "localizedNames" : {
+            "sv" : "Ort"
+          },
+          "localizedDescriptions" : {
+            "sv" : "*The name of a local government district or geographical area that contains the address. (en)"
+          },
+          "annotations" : {
+            "comment" : "*Coding with an external terminology is preferred, where possible. For example: 'Surf Coast' and 'Yarra' local government councils in Victoria, Australia; and the Parishes of 'St. Andrew' and 'Kingston' in Jamaica. (en)"
+          },
+          "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/protocol[at0008]/items[openEHR-EHR-CLUSTER.address.v0,'Mottagares adress']/items[at0003,'Ort']/value",
+          "inputs" : [ {
+            "type" : "TEXT"
+          } ]
+        }, {
+          "id" : "postnummer",
+          "name" : "Postnummer",
+          "localizedName" : "Postnummer",
+          "rmType" : "DV_TEXT",
+          "nodeId" : "at0005",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Postnummer"
+          },
+          "localizedDescriptions" : {
+            "sv" : "*The code for a postal delivery area containing the address, as defined by the relevant postal delivery service. (en)"
+          },
+          "annotations" : {
+            "comment" : "*Also known as a postcode or ZIP code.\r\n (en)"
+          },
+          "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/protocol[at0008]/items[openEHR-EHR-CLUSTER.address.v0,'Mottagares adress']/items[at0005,'Postnummer']/value",
+          "inputs" : [ {
+            "type" : "TEXT"
+          } ]
+        }, {
+          "id" : "land",
+          "name" : "Land",
+          "localizedName" : "Land",
+          "rmType" : "DV_TEXT",
+          "nodeId" : "at0006",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Land"
+          },
+          "localizedDescriptions" : {
+            "sv" : "*The name of the country containing the address. (en)"
+          },
+          "annotations" : {
+            "comment" : "*For example: Australia; Canada; Jamaica; or Norway. Coding with an external terminology, such as EN ISO 3166–1 Alpha 2 country code, is recommended.  (en)"
+          },
+          "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/protocol[at0008]/items[openEHR-EHR-CLUSTER.address.v0,'Mottagares adress']/items[at0006,'Land']/value",
+          "inputs" : [ {
+            "type" : "TEXT"
+          } ]
+        } ]
+      }, {
+        "id" : "status_på_förfrågan",
+        "name" : "Status på förfrågan",
+        "localizedName" : "Status på förfrågan",
+        "rmType" : "DV_TEXT",
+        "nodeId" : "at0127",
+        "min" : 0,
+        "max" : 1,
+        "dependsOn" : [ "nuvarande_aktivitet" ],
+        "localizedNames" : {
+          "sv" : "Status på förfrågan"
+        },
+        "localizedDescriptions" : {
+          "sv" : "Status på begäran om tjänsten, angiven av den som frågar om tjänsten."
+        },
+        "annotations" : {
+          "comment" : "Status används för att ange om detta är den ursprungliga förfrågan, eller en uppföljningsförfrågan om att ändra eller tillhandahålla kompletterande information. Kodning med en terminologi är att föredra, där det är möjligt."
+        },
+        "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/protocol[at0008]/items[at0127]/value",
+        "inputs" : [ {
+          "type" : "TEXT",
+          "list" : [ {
+            "value" : "Mottaget",
+            "label" : "Mottaget"
+          }, {
+            "value" : "Pågående",
+            "label" : "Pågående"
+          }, {
+            "value" : "Besvarat",
+            "label" : "Besvarat"
+          } ],
+          "listOpen" : false
+        } ]
+      }, {
+        "id" : "expiry_time",
+        "name" : "expiry_time",
+        "rmType" : "DV_DATE_TIME",
+        "min" : 0,
+        "max" : 1,
+        "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/expiry_time",
+        "inputs" : [ {
+          "type" : "DATETIME"
+        } ]
+      }, {
+        "id" : "narrative",
+        "name" : "Narrative",
+        "rmType" : "DV_TEXT",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/narrative",
+        "inputs" : [ {
+          "type" : "TEXT"
+        } ],
+        "inContext" : true
+      }, {
+        "id" : "language",
+        "name" : "Language",
+        "rmType" : "CODE_PHRASE",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/language",
+        "inContext" : true
+      }, {
+        "id" : "encoding",
+        "name" : "Encoding",
+        "rmType" : "CODE_PHRASE",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/encoding",
+        "inContext" : true
+      }, {
+        "id" : "subject",
+        "name" : "Subject",
+        "rmType" : "PARTY_PROXY",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/content[openEHR-EHR-INSTRUCTION.service_request.v1,'Remiss information']/subject",
+        "inputs" : [ {
+          "suffix" : "id",
+          "type" : "TEXT"
+        }, {
+          "suffix" : "id_scheme",
+          "type" : "TEXT"
+        }, {
+          "suffix" : "id_namespace",
+          "type" : "TEXT"
+        }, {
+          "suffix" : "name",
+          "type" : "TEXT"
+        } ],
+        "inContext" : true
+      } ]
+    }, {
+      "id" : "category",
+      "rmType" : "DV_CODED_TEXT",
+      "nodeId" : "",
+      "min" : 1,
+      "max" : 1,
+      "aqlPath" : "/category",
+      "inputs" : [ {
+        "suffix" : "code",
+        "type" : "CODED_TEXT",
+        "list" : [ {
+          "value" : "433",
+          "label" : "event",
+          "localizedLabels" : {
+            "sv" : ""
+          }
+        } ],
+        "terminology" : "openehr"
+      } ],
+      "inContext" : true
+    }, {
+      "id" : "language",
+      "name" : "Language",
+      "rmType" : "CODE_PHRASE",
+      "min" : 1,
+      "max" : 1,
+      "aqlPath" : "/language",
+      "inContext" : true
+    }, {
+      "id" : "territory",
+      "name" : "Territory",
+      "rmType" : "CODE_PHRASE",
+      "min" : 1,
+      "max" : 1,
+      "aqlPath" : "/territory",
+      "inContext" : true
+    }, {
+      "id" : "composer",
+      "name" : "Composer",
+      "rmType" : "PARTY_PROXY",
+      "min" : 1,
+      "max" : 1,
+      "aqlPath" : "/composer",
+      "inputs" : [ {
+        "suffix" : "id",
+        "type" : "TEXT"
+      }, {
+        "suffix" : "id_scheme",
+        "type" : "TEXT"
+      }, {
+        "suffix" : "id_namespace",
+        "type" : "TEXT"
+      }, {
+        "suffix" : "name",
+        "type" : "TEXT"
+      } ],
+      "inContext" : true
+    } ]
+  }
+}
