@@ -5,7 +5,7 @@ function fetcher(url) {
   return fetch(url, {
     method: "POST",
     headers: {
-      Authorization: `Basic b3BlbmVoclBPQyE6ZGYhMTMjbExpIyUxMzM3cCxX`,
+      Authorization: `Basic INPUT base64 encoded string here`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
@@ -17,7 +17,7 @@ function fetcher(url) {
 
 function Ehr() {
   const { data, error } = useSWR(
-    `http://158.126.240.126:8080/ehrbase/rest/openehr/v1/query/aql`,
+    `http://localhost:8080/ehrbase/rest/openehr/v1/query/aql`,
     fetcher
   );
 

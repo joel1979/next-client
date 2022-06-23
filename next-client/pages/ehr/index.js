@@ -5,7 +5,7 @@ function fetcher(url) {
   return fetch(url, {
     method: "POST",
     headers: {
-      Authorization: `Basic input base64 encoded string here`,
+      Authorization: `Basic insert base64 encoded string here`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({

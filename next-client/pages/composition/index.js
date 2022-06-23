@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import CreateEHR from "../../components/CreateEhr";
-import Composition from "../../components/Compositions";
+import Composition from "../../components/Composition";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
@@ -8,7 +8,7 @@ function fetcher(url) {
   return fetch(url, {
     method: "POST",
     headers: {
-      Authorization: `Basic INPUT base64 encoded string here`,
+      Authorization: `Basic insert base64 encoded string here`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
@@ -26,7 +26,7 @@ function upload(template) {
     {
       method: "POST",
       headers: {
-        Authorization: `Basic INPUT base64 encoded string here`,
+        Authorization: `Basic insert base64 encoded string here`,
         "Content-Type": "application/xml",
         accept: "application/json",
       },

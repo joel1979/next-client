@@ -4,7 +4,7 @@ function fetcher(url) {
   return fetch(url, {
     method: "GET",
     headers: {
-      'Authorization': `Basic input base64 encoded string here`,
+      'Authorization': `Basic insert base64 encoded string here`,
       'Content-Type': 'application/json',
       'cors': 'no-cors',
     },
@@ -24,5 +24,3 @@ export default function useEhr(id) {
     isError: error
   }
 }
-
-

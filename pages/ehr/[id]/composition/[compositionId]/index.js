@@ -9,14 +9,14 @@ function Compositionx() {
     return fetch(url, {
       method: "GET",
       headers: {
-        Authorization: `Basic b3BlbmVoclBPQyE6ZGYhMTMjbExpIyUxMzM3cCxX`,
+        Authorization: `Basic input base64 encoded string here`,
         "Content-Type": "application/json",
       }
     }).then((response) => response.json());
   }
 
   const { data: composition } = useSWR(
-    router.query.id ? `http://158.126.240.126:8080/ehrbase/rest/openehr/v1/query/aql/ehrbase/rest/openehr/v1/ehr/${router.query.id}/composition/${router.query.compositionId}` : null,
+    router.query.id ? `http://localhost:8080/ehrbase/rest/openehr/v1/query/aql/ehrbase/rest/openehr/v1/ehr/${router.query.id}/composition/${router.query.compositionId}` : null,
     fetcher
   );
 

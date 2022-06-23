@@ -8,7 +8,7 @@ export default function CreateEhr() {
     return fetch('http://localhost:8080/ehrbase/rest/openehr/v1/ehr', {
       method: "POST",
       headers: {
-        Authorization: `Basic input BASE64 encoded string here`,
+        Authorization: `Basic insert base64 encoded string here`,
         "Content-Type": "application/json",
       }
     }).then((response) => response.json());

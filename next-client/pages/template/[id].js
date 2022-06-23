@@ -7,7 +7,7 @@ function fetcher(url) {
   return fetch(url, {
     method: "GET",
     headers: {
-      Authorization: `Basic INPUT base64 encoded string here`,
+      Authorization: `Basic insert base64 encoded string here`,
       'Accept': 'application/xml'
     }
   }).then((response) => response.text());

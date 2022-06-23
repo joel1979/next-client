@@ -7,7 +7,7 @@ function fetcher(url) {
   return fetch(url, {
     method: "GET",
     headers: {
-      Authorization: `Basic b3BlbmVoclBPQyE6ZGYhMTMjbExpIyUxMzM3cCxX`,
+      Authorization: `Basic INPUT base64 encoded string here`,
       "Content-Type": "application/json",
     }
   }).then((response) => response.json());
@@ -17,7 +17,7 @@ const Record = () => {
   const router = useRouter()
   console.log(router)
   const { data, error } = useSWR(
-    `http://158.126.240.126:8080/ehrbase/rest/openehr/v1/ehr/${router.query.id}`,
+    `http://localhost:8080/ehrbase/rest/openehr/v1/ehr/${router.query.id}`,
     fetcher
   );
 

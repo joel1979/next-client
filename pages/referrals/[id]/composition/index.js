@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 //   return fetch(url, {
 //     method: "POST",
 //     headers: {
-//       Authorization: `Basic bXlhZG1pbjpteVN1cGVyQXdlc29tZVBhc3N3b3JkMTIz`,
+//       Authorization: `Basic insert base64 encoded string here`,
 //       "Content-Type": "application/json",
 //     },
 //     body: JSON.stringify({
@@ -17,20 +17,20 @@ import { useRouter } from 'next/router'
 // }
 
 function Composition() {
-    const router = useRouter()
+  const router = useRouter()
 
-    console.log(router)
-//   const { data, error } = useSWR(
-//     `http://localhost:8080/ehrbase/rest/openehr/v1/query/aql`,
-//     fetcher
-//   );
+  console.log(router)
+  //   const { data, error } = useSWR(
+  //     `http://localhost:8080/ehrbase/rest/openehr/v1/query/aql`,
+  //     fetcher
+  //   );
 
-//   if (!error && !data) return <div>loading</div>;
-//   if (error) return <div>error</div>;
+  //   if (!error && !data) return <div>loading</div>;
+  //   if (error) return <div>error</div>;
   return (
     <>
 
-   </>
+    </>
   );
 }
 

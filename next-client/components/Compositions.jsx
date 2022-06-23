@@ -11,7 +11,7 @@ function Compositions({ ehr }) {
     return fetch(url, {
       method: "POST",
       headers: {
-        Authorization: `Basic INPUT base64 encoded string here`,
+        Authorization: `Basic insert base64 encoded string here`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({

@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import CreateEHR from '../../components/CreateEhr'
+// import CreateEHR from '../../components/CreateEhr'
 import { useRouter } from 'next/router'
 
 function Compositionx() {
@@ -9,14 +9,14 @@ function Compositionx() {
     return fetch(url, {
       method: "GET",
       headers: {
-        Authorization: `Basic INPUT base64 encoded string here`,
+        Authorization: `Basic insert base64 encoded string here`,
         "Content-Type": "application/json",
       }
     }).then((response) => response.json());
   }
 
   const { data: composition } = useSWR(
-    router.query.id ? `http://localhost:8080/ehrbase/rest/openehr/v1/query/aql/ehrbase/rest/openehr/v1/ehr/${router.query.id}/composition/${router.query.compositionId}` : null,
+    router.query.id ? `http://localhost:8080/ehrbase/rest/openehr/v1/ehr/${router.query.id}/composition/${router.query.compositionId}` : null,
     fetcher
   );
 
