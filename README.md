@@ -34,4 +34,4 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
  ## openEHR-demo
-This application has not been tested for clinical use and is not CE-marked. It may therefore be used for research purposes only and comes without any guarantees.
+This application has not been tested for clinical use and is not CE-marked. It may therefore be used for research purposes only and comes without any guarantees. A Python application is 
