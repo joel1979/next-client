@@ -34,6 +34,10 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
  ## openEHR-demo
-This application has not been tested for clinical use and is not CE-marked. It may therefore be used for research purposes only and comes without any guarantees. A Python application (import_request.py, basically a webhook) is included to the repository. 
+This application has not been tested for clinical use and is not CE-marked. It may therefore be used for research purposes only and comes without any guarantees. 
+
+-- Webhook -- 
+
+A Python application (import_request.py, basically a webhook) is included to the repository. 
 
 A fork of https://github.com/medblocks/all-forms was also used to demonstrate medblocks-ui capabilities in the POC.
